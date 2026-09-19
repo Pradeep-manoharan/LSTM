@@ -43,16 +43,22 @@ a Lava Process run.
 - The rate trainer (`train_mnist.py`, `scripts/smoke_test.py`) runs on 3.10–3.12 with `requirements-rate.txt`.
 
 ```bash
-# Intel Lava path (CPython 3.10)
+# Intel Lava path (CPython 3.10) — conda
 conda create -n lava310 python=3.10
 conda activate lava310
 pip install -r requirements.txt
 
-# Rate-only path (this Cloud Agent image is Python 3.12 — no lava-nc wheel)
+# Intel Lava path — uv (used on the Cloud Agent for the Lava Process run)
+uv python install 3.10
+uv venv --python 3.10 .venv-lava310
+uv pip install --python .venv-lava310 lava-nc==0.10.0 numpy==1.26.4
+PYTHONPATH=. .venv-lava310/bin/python demo_lava_microcircuit.py
+
+# Rate-only path (Python 3.10–3.12 — no lava-nc wheel on 3.12+)
 python3 -m pip install -r requirements-rate.txt
 ```
 
-Versions used on the **historical local proof** (see RESULTS.md):
+Versions used on the **historical local proof** (see RESULTS.md §2):
 
 - Python 3.10.21
 - lava-nc 0.10.0
@@ -95,16 +101,17 @@ Artifacts land in `artifacts/` (`mnist_run.json`, `lava_cancel_demo.json`).
 
 ```
 .
-  sacramento/rate_model.py          # PE learner (MNIST)
-  sacramento/lava_microcircuit.py   # Lava Process + NumPy fallback
+  sacramento/rate_model.py            # PE learner (MNIST)
+  sacramento/lava_microcircuit.py     # demo runner + NumPy fallback
+  sacramento/lava_proc/pyramidal.py   # Lava Process + ProcessModel (module-level)
   train_mnist.py
   demo_lava_microcircuit.py
   scripts/smoke_test.py
-  RESULTS.md                        # real metrics + gaps
+  RESULTS.md                          # this-checkout metrics + historical
   README.md
-  requirements.txt                  # lava-nc + torch (py3.10)
-  requirements-rate.txt             # numpy/torch only
-  artifacts/
+  requirements.txt                    # lava-nc + torch (py3.10)
+  requirements-rate.txt               # numpy/torch only
+  artifacts/                          # mnist_run.json, lava_cancel_demo.json
 ```
 
 See **RESULTS.md** for measured numbers, PE verdict, and gaps vs the original paper.
