@@ -1,0 +1,39 @@
+=== Sacramento MNIST (rate microcircuit) ===
+Python: 3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]
+Lava import note: No module named 'lava'
+--- PE learning smoke test ---
+{
+  "pe_before": 0.13722066749534395,
+  "pe_after": 0.10379724990969069,
+  "weight_delta_l1": 13.060394777354276,
+  "train_acc_last": 0.5
+}
+--- Loading MNIST subset train=2000 test=500 ---
+x_train (2000, 784) y_train (2000,) class counts [193 226 203 193 186 170 220 220 191 198]
+x_test  (500, 784) y_test  (500,)
+Network: (784, 256, 10) basal_sparse=0.7 apical_sparse=0.7
+Nonzero basal W_pp[0]: 140220/200704; apical W_fb[0]: 1768
+Epoch 0 (before train) test_acc=0.0800
+Epoch 1/20 train_acc=0.1070 test_acc=0.0860 mean_|PE|=0.052398 mean_|dW|=1.543051e-04
+Epoch 2/20 train_acc=0.1305 test_acc=0.1200 mean_|PE|=0.046234 mean_|dW|=1.162668e-04
+Epoch 3/20 train_acc=0.1500 test_acc=0.1640 mean_|PE|=0.044215 mean_|dW|=1.042336e-04
+Epoch 4/20 train_acc=0.1605 test_acc=0.1460 mean_|PE|=0.042901 mean_|dW|=9.583585e-05
+Epoch 5/20 train_acc=0.2110 test_acc=0.2060 mean_|PE|=0.041991 mean_|dW|=9.014954e-05
+Epoch 6/20 train_acc=0.2555 test_acc=0.2220 mean_|PE|=0.041267 mean_|dW|=8.512723e-05
+Epoch 7/20 train_acc=0.3015 test_acc=0.2700 mean_|PE|=0.040650 mean_|dW|=8.206013e-05
+Epoch 8/20 train_acc=0.3940 test_acc=0.3740 mean_|PE|=0.040102 mean_|dW|=7.879796e-05
+Epoch 9/20 train_acc=0.4445 test_acc=0.3940 mean_|PE|=0.039624 mean_|dW|=7.622935e-05
+Epoch 10/20 train_acc=0.4445 test_acc=0.4380 mean_|PE|=0.039143 mean_|dW|=7.448198e-05
+Epoch 11/20 train_acc=0.4030 test_acc=0.3860 mean_|PE|=0.038690 mean_|dW|=7.236087e-05
+Epoch 12/20 train_acc=0.5615 test_acc=0.5140 mean_|PE|=0.038192 mean_|dW|=7.048003e-05
+Epoch 13/20 train_acc=0.5920 test_acc=0.5720 mean_|PE|=0.037759 mean_|dW|=6.902552e-05
+Epoch 14/20 train_acc=0.6435 test_acc=0.6080 mean_|PE|=0.037276 mean_|dW|=6.778982e-05
+Epoch 15/20 train_acc=0.5470 test_acc=0.4880 mean_|PE|=0.036817 mean_|dW|=6.654262e-05
+Epoch 16/20 train_acc=0.5990 test_acc=0.6080 mean_|PE|=0.036300 mean_|dW|=6.551666e-05
+Epoch 17/20 train_acc=0.6910 test_acc=0.6640 mean_|PE|=0.035804 mean_|dW|=6.436345e-05
+Epoch 18/20 train_acc=0.6510 test_acc=0.6280 mean_|PE|=0.035352 mean_|dW|=6.362123e-05
+Epoch 19/20 train_acc=0.6885 test_acc=0.6720 mean_|PE|=0.034846 mean_|dW|=6.242318e-05
+Epoch 20/20 train_acc=0.7285 test_acc=0.6920 mean_|PE|=0.034327 mean_|dW|=6.199303e-05
+Wrote artifacts/mnist_run.json
+Elapsed 6.0s
+PE verdict: PASS: local PE×pre updated basal weights (Δ|W|=1.306039e+01); MNIST run used same rule (Eq. 7–9 style).

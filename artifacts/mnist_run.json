@@ -1,0 +1,180 @@
+{
+  "config": {
+    "layer_sizes": [
+      784,
+      256,
+      10
+    ],
+    "train_size": 2000,
+    "test_size": 500,
+    "epochs": 20,
+    "batch_size": 10,
+    "basal_sparsity": 0.7,
+    "apical_sparsity": 0.7,
+    "eta_pp": 0.05,
+    "eta_pi": 0.0,
+    "eta_ip": 0.0,
+    "weight_scale": 4.0,
+    "lambda_hidden": 0.35,
+    "seed": 0
+  },
+  "smoke": {
+    "pe_before": 0.13722066749534395,
+    "pe_after": 0.10379724990969069,
+    "weight_delta_l1": 13.060394777354276,
+    "train_acc_last": 0.5
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "test_acc": 0.08,
+      "train_acc": null,
+      "mean_abs_pe": null
+    },
+    {
+      "epoch": 1,
+      "train_acc": 0.107,
+      "test_acc": 0.086,
+      "mean_abs_pe": 0.05239765139215195,
+      "mean_abs_dw": 0.0001543051106071655
+    },
+    {
+      "epoch": 2,
+      "train_acc": 0.1305,
+      "test_acc": 0.12,
+      "mean_abs_pe": 0.046233999489613604,
+      "mean_abs_dw": 0.00011626680780750654
+    },
+    {
+      "epoch": 3,
+      "train_acc": 0.15,
+      "test_acc": 0.164,
+      "mean_abs_pe": 0.0442148723577314,
+      "mean_abs_dw": 0.00010423361204517076
+    },
+    {
+      "epoch": 4,
+      "train_acc": 0.1605,
+      "test_acc": 0.146,
+      "mean_abs_pe": 0.042901433862608175,
+      "mean_abs_dw": 9.583584992288612e-05
+    },
+    {
+      "epoch": 5,
+      "train_acc": 0.211,
+      "test_acc": 0.206,
+      "mean_abs_pe": 0.041990604911690974,
+      "mean_abs_dw": 9.014953633548502e-05
+    },
+    {
+      "epoch": 6,
+      "train_acc": 0.2555,
+      "test_acc": 0.222,
+      "mean_abs_pe": 0.041267391438373435,
+      "mean_abs_dw": 8.512723162697926e-05
+    },
+    {
+      "epoch": 7,
+      "train_acc": 0.3015,
+      "test_acc": 0.27,
+      "mean_abs_pe": 0.04064967095492581,
+      "mean_abs_dw": 8.20601320747516e-05
+    },
+    {
+      "epoch": 8,
+      "train_acc": 0.394,
+      "test_acc": 0.374,
+      "mean_abs_pe": 0.04010190943823155,
+      "mean_abs_dw": 7.87979603294731e-05
+    },
+    {
+      "epoch": 9,
+      "train_acc": 0.4445,
+      "test_acc": 0.394,
+      "mean_abs_pe": 0.03962356392788827,
+      "mean_abs_dw": 7.622935139108937e-05
+    },
+    {
+      "epoch": 10,
+      "train_acc": 0.4445,
+      "test_acc": 0.438,
+      "mean_abs_pe": 0.03914290488490239,
+      "mean_abs_dw": 7.448198213788387e-05
+    },
+    {
+      "epoch": 11,
+      "train_acc": 0.403,
+      "test_acc": 0.386,
+      "mean_abs_pe": 0.038690219252314056,
+      "mean_abs_dw": 7.236086790119514e-05
+    },
+    {
+      "epoch": 12,
+      "train_acc": 0.5615,
+      "test_acc": 0.514,
+      "mean_abs_pe": 0.038191803096106675,
+      "mean_abs_dw": 7.048003190793166e-05
+    },
+    {
+      "epoch": 13,
+      "train_acc": 0.592,
+      "test_acc": 0.572,
+      "mean_abs_pe": 0.03775946713665894,
+      "mean_abs_dw": 6.902552339383435e-05
+    },
+    {
+      "epoch": 14,
+      "train_acc": 0.6435,
+      "test_acc": 0.608,
+      "mean_abs_pe": 0.03727636883035242,
+      "mean_abs_dw": 6.778982376087257e-05
+    },
+    {
+      "epoch": 15,
+      "train_acc": 0.547,
+      "test_acc": 0.488,
+      "mean_abs_pe": 0.03681672427796253,
+      "mean_abs_dw": 6.654262144971519e-05
+    },
+    {
+      "epoch": 16,
+      "train_acc": 0.599,
+      "test_acc": 0.608,
+      "mean_abs_pe": 0.03629987546886818,
+      "mean_abs_dw": 6.551665851538988e-05
+    },
+    {
+      "epoch": 17,
+      "train_acc": 0.691,
+      "test_acc": 0.664,
+      "mean_abs_pe": 0.03580387390259679,
+      "mean_abs_dw": 6.43634508607455e-05
+    },
+    {
+      "epoch": 18,
+      "train_acc": 0.651,
+      "test_acc": 0.628,
+      "mean_abs_pe": 0.035351895941661673,
+      "mean_abs_dw": 6.362123376518332e-05
+    },
+    {
+      "epoch": 19,
+      "train_acc": 0.6885,
+      "test_acc": 0.672,
+      "mean_abs_pe": 0.03484578602209128,
+      "mean_abs_dw": 6.242317982908902e-05
+    },
+    {
+      "epoch": 20,
+      "train_acc": 0.7285,
+      "test_acc": 0.692,
+      "mean_abs_pe": 0.03432715172081256,
+      "mean_abs_dw": 6.199302872143186e-05
+    }
+  ],
+  "final_train_acc": 0.7285,
+  "final_test_acc": 0.692,
+  "elapsed_sec": 5.955993175506592,
+  "pe_learning_verdict": "PASS: local PE\u00d7pre updated basal weights (\u0394|W|=1.306039e+01); MNIST run used same rule (Eq. 7\u20139 style).",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+}

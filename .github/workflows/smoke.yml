@@ -1,0 +1,16 @@
+name: smoke
+on:
+  push:
+  pull_request:
+jobs:
+  rate-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install NumPy (smoke does not need torch or lava-nc)
+        run: pip install "numpy>=1.24.4,<2.0.0"
+      - name: PE smoke + cancel demo
+        run: python scripts/smoke_test.py

@@ -1,0 +1,13 @@
+# Prefer a conda/venv with **Python 3.10** — lava-nc 0.10.0 requires >=3.10,<3.11.
+# Python 3.13 cannot install lava-nc. `pip install lava` on 3.13 is an unrelated Vulkan package.
+#
+#   conda create -n lava310 python=3.10
+#   conda activate lava310
+#   pip install -r requirements.txt
+#
+lava-nc==0.10.0
+lava-dl==0.6.0
+numpy>=1.24.4,<2.0.0
+torch==2.3.1
+torchvision==0.18.1
+pillow>=10.0.1,<11.0
