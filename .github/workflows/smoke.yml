@@ -1,0 +1,16 @@
+name: smoke
+on:
+  push:
+  pull_request:
+jobs:
+  rate-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install rate-only deps
+        run: pip install -r requirements-rate.txt
+      - name: PE smoke + cancel demo
+        run: python scripts/smoke_test.py
